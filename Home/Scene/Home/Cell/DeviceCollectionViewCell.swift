@@ -85,7 +85,7 @@ private extension DeviceCollectionViewCell {
         case "RollerShutter":
             return UIColor(cgColor: #colorLiteral(red: 0.3921568627, green: 0.8235294118, blue: 1, alpha: 1))
         default:
-            return UIColor(cgColor: #colorLiteral(red: 0.3921568627, green: 0.8235294118, blue: 1, alpha: 1))
+            return UIColor(cgColor: #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1))
         }
     }
 }

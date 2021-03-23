@@ -20,6 +20,7 @@ extension HomeCoordinator: HomeViewModelDelegate {
         DispatchQueue.main.async {
             let userViewController = UserViewController()
             let viewModel = UserViewModel(user: user)
+            viewModel.delegate = self
             userViewController.viewModel = viewModel
             self.rootView.pushViewController(userViewController, animated: true)
         }
@@ -51,5 +52,25 @@ extension HomeCoordinator: HomeViewModelDelegate {
             heaterViewController.viewModel = viewModel
             self.rootView.pushViewController(heaterViewController, animated: true)
         }
+    }
+}
+
+extension HomeCoordinator: UserViewModelDelegate {
+
+    func didTapOnUpdate() {
+        DispatchQueue.main.async {
+            let updateProfileViewController = UpdateUserViewController()
+            let viewModel = UpdateUserViewModel()
+            viewModel.delegate = self
+            updateProfileViewController.viewModel = viewModel
+            self.rootView.pushViewController(updateProfileViewController, animated: true)
+        }
+    }
+}
+
+extension HomeCoordinator: UpdateUserViewModelDelegate {
+    
+    func didTapOnSave() {
+        self.rootView.popViewController(animated: true)
     }
 }

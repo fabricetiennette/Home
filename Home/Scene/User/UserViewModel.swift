@@ -1,6 +1,11 @@
 import Foundation
 
+protocol UserViewModelDelegate: AnyObject {
+    func didTapOnUpdate()
+}
 class UserViewModel {
+
+    weak var delegate: UserViewModelDelegate?
 
     var userHandler: ((User) -> Void)?
 
@@ -16,5 +21,9 @@ class UserViewModel {
         }
         guard let user = UserDefaultConfig.user.first else { return }
         userHandler?(user)
+    }
+
+    func showUpdateProfile() {
+        delegate?.didTapOnUpdate()
     }
 }

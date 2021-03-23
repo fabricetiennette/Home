@@ -6,8 +6,12 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupView()
+        setNavigationBar()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         bind()
     }
 
@@ -32,8 +36,7 @@ class UserViewController: UIViewController {
         // User Age Label
         view.addSubview(ageLabel)
         ageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ageLabel.anchor(top: nameLabel.bottomAnchor,
-                        paddingTop: 4)
+        ageLabel.anchor(top: nameLabel.bottomAnchor, paddingTop: 4)
 
         return view
     }()
@@ -60,7 +63,7 @@ class UserViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 26)
-        label.textColor = #colorLiteral(red: 0.2141337097, green: 0.269574821, blue: 0.3898406625, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
         return label
     }()
 
@@ -68,7 +71,7 @@ class UserViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.textColor = #colorLiteral(red: 0.2141337097, green: 0.269574821, blue: 0.3898406625, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
         return label
     }()
 
@@ -95,6 +98,18 @@ class UserViewController: UIViewController {
         label.textColor = .white
         return label
     }()
+
+    private lazy var updateProfileButton: UIBarButtonItem = {
+        let updateButton = UIBarButtonItem(title: "update",
+                        style: .plain,
+                        target: self,
+                        action: #selector(didTapUpdateProfileButton))
+        return updateButton
+    }()
+
+    @objc func didTapUpdateProfileButton() {
+        viewModel?.showUpdateProfile()
+    }
 }
 
 private extension UserViewController {
@@ -103,7 +118,7 @@ private extension UserViewController {
         guard let viewModel = self.viewModel else { return }
         viewModel.userHandler = { [weak self] user in
             guard self == self else { return }
-            self?.nameLabel.text = user.firstName
+            self?.nameLabel.text = "\(user.firstName ?? "") \(user.lastName ?? "")"
             self?.streetLabel.text = user.address?.street
             self?.cityLabel.text = user.address?.city
             self?.countryLabel.text = user.address?.country
@@ -112,11 +127,15 @@ private extension UserViewController {
         viewModel.getUser()
     }
 
+    func setNavigationBar() {
+        navigationItem.rightBarButtonItem  = updateProfileButton
+    }
+
     func setupView() {
         navigationItem.title = "Profile"
         let safeArea = view.safeAreaLayoutGuide
         profileImageView.image = UIImage(named: "account")
-        view.backgroundColor = #colorLiteral(red: 0.2141337097, green: 0.269574821, blue: 0.3898406625, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
         view.addSubview(containerView)
         containerView.anchor(top: view.topAnchor,
                              left: safeArea.leftAnchor,

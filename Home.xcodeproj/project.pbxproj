@@ -36,6 +36,10 @@
 		2CA5A19726095E9100E41A12 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A19626095E9100E41A12 /* UserDefault+.swift */; };
 		2CA5A19F26095EC500E41A12 /* UserDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */; };
 		2CA5A1A42609646800E41A12 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1A32609646800E41A12 /* Double+.swift */; };
+		2CA5A1AA2609DEF400E41A12 /* UpdateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1A92609DEF400E41A12 /* UpdateUserViewController.swift */; };
+		2CA5A1B22609DF3800E41A12 /* UpdateUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1B12609DF3800E41A12 /* UpdateUserViewModel.swift */; };
+		2CA5A1BB2609E63C00E41A12 /* UpdateProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1BA2609E63C00E41A12 /* UpdateProfileTableViewCell.swift */; };
+		2CA5A1C42609E99200E41A12 /* UpdateUserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1C32609E99200E41A12 /* UpdateUserDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		2CA5A19626095E9100E41A12 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
 		2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConfig.swift; sourceTree = "<group>"; };
 		2CA5A1A32609646800E41A12 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		2CA5A1A92609DEF400E41A12 /* UpdateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewController.swift; sourceTree = "<group>"; };
+		2CA5A1B12609DF3800E41A12 /* UpdateUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserViewModel.swift; sourceTree = "<group>"; };
+		2CA5A1BA2609E63C00E41A12 /* UpdateProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileTableViewCell.swift; sourceTree = "<group>"; };
+		2CA5A1C32609E99200E41A12 /* UpdateUserDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 				2CA59B432607CAC400E41A12 /* Home */,
 				2CA5A15C2608FF2D00E41A12 /* Devices */,
 				2CA5A1872609567400E41A12 /* User */,
+				2CA5A1A82609DED900E41A12 /* UpdateUser */,
 				2CA59B3A2607CA7C00E41A12 /* Common */,
 			);
 			path = Scene;
@@ -315,6 +324,33 @@
 				2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2CA5A1A82609DED900E41A12 /* UpdateUser */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1C22609E96F00E41A12 /* DataSource */,
+				2CA5A1B92609E62A00E41A12 /* Cell */,
+				2CA5A1A92609DEF400E41A12 /* UpdateUserViewController.swift */,
+				2CA5A1B12609DF3800E41A12 /* UpdateUserViewModel.swift */,
+			);
+			path = UpdateUser;
+			sourceTree = "<group>";
+		};
+		2CA5A1B92609E62A00E41A12 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1BA2609E63C00E41A12 /* UpdateProfileTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2CA5A1C22609E96F00E41A12 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1C32609E99200E41A12 /* UpdateUserDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,9 +512,11 @@
 			files = (
 				2CA5A19F26095EC500E41A12 /* UserDefaultConfig.swift in Sources */,
 				2CA5A13A260805C400E41A12 /* DevicesDataSource.swift in Sources */,
+				2CA5A1BB2609E63C00E41A12 /* UpdateProfileTableViewCell.swift in Sources */,
 				2CA59B3C2607CA9B00E41A12 /* Coordinator.swift in Sources */,
 				2CA5A12D2607F54500E41A12 /* HomeViewModel.swift in Sources */,
 				2CA5A11A2607EED200E41A12 /* APIRequest.swift in Sources */,
+				2CA5A1C42609E99200E41A12 /* UpdateUserDataSource.swift in Sources */,
 				2CA59AE22607C8B000E41A12 /* HomeViewController.swift in Sources */,
 				2CA5A16E2609166D00E41A12 /* LightViewModel.swift in Sources */,
 				2CA5A1582608E84B00E41A12 /* UIView+Anchor.swift in Sources */,
@@ -491,7 +529,9 @@
 				2CA5A1762609167F00E41A12 /* LightViewController.swift in Sources */,
 				2CA5A18E260956A800E41A12 /* UserViewModel.swift in Sources */,
 				2CA5A1452608089100E41A12 /* DeviceCollectionViewCell.swift in Sources */,
+				2CA5A1B22609DF3800E41A12 /* UpdateUserViewModel.swift in Sources */,
 				2CA5A183260916D200E41A12 /* RollerShutterViewModel.swift in Sources */,
+				2CA5A1AA2609DEF400E41A12 /* UpdateUserViewController.swift in Sources */,
 				2CA59ADE2607C8B000E41A12 /* AppDelegate.swift in Sources */,
 				2CA5A1222607F01000E41A12 /* HomeService.swift in Sources */,
 				2CA5A15F2608FF6500E41A12 /* HeaterViewController.swift in Sources */,
