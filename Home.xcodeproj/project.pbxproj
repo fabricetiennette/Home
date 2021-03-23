@@ -20,8 +20,22 @@
 		2CA5A10B2607EBB300E41A12 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA5A10A2607EBB300E41A12 /* RxCocoa */; };
 		2CA5A1112607ED4100E41A12 /* Resouces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1102607ED4100E41A12 /* Resouces.swift */; };
 		2CA5A11A2607EED200E41A12 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1192607EED200E41A12 /* APIRequest.swift */; };
-		2CA5A1222607F01000E41A12 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1212607F01000E41A12 /* APIClient.swift */; };
+		2CA5A1222607F01000E41A12 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1212607F01000E41A12 /* HomeService.swift */; };
 		2CA5A12D2607F54500E41A12 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A12C2607F54500E41A12 /* HomeViewModel.swift */; };
+		2CA5A13A260805C400E41A12 /* DevicesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A139260805C400E41A12 /* DevicesDataSource.swift */; };
+		2CA5A1452608089100E41A12 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1442608089100E41A12 /* DeviceCollectionViewCell.swift */; };
+		2CA5A1582608E84B00E41A12 /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1572608E84B00E41A12 /* UIView+Anchor.swift */; };
+		2CA5A15F2608FF6500E41A12 /* HeaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A15E2608FF6500E41A12 /* HeaterViewController.swift */; };
+		2CA5A1672608FF9D00E41A12 /* HeaterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1662608FF9D00E41A12 /* HeaterViewModel.swift */; };
+		2CA5A16E2609166D00E41A12 /* LightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A16D2609166D00E41A12 /* LightViewModel.swift */; };
+		2CA5A1762609167F00E41A12 /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1752609167F00E41A12 /* LightViewController.swift */; };
+		2CA5A17B260916BA00E41A12 /* RollerShutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A17A260916BA00E41A12 /* RollerShutterViewController.swift */; };
+		2CA5A183260916D200E41A12 /* RollerShutterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A182260916D200E41A12 /* RollerShutterViewModel.swift */; };
+		2CA5A1892609568B00E41A12 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1882609568B00E41A12 /* UserViewController.swift */; };
+		2CA5A18E260956A800E41A12 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A18D260956A800E41A12 /* UserViewModel.swift */; };
+		2CA5A19726095E9100E41A12 /* UserDefault+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A19626095E9100E41A12 /* UserDefault+.swift */; };
+		2CA5A19F26095EC500E41A12 /* UserDefaultConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */; };
+		2CA5A1A42609646800E41A12 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1A32609646800E41A12 /* Double+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +73,22 @@
 		2CA59B442607CAD900E41A12 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		2CA5A1102607ED4100E41A12 /* Resouces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resouces.swift; sourceTree = "<group>"; };
 		2CA5A1192607EED200E41A12 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		2CA5A1212607F01000E41A12 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		2CA5A1212607F01000E41A12 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		2CA5A12C2607F54500E41A12 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		2CA5A139260805C400E41A12 /* DevicesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDataSource.swift; sourceTree = "<group>"; };
+		2CA5A1442608089100E41A12 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CA5A1572608E84B00E41A12 /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		2CA5A15E2608FF6500E41A12 /* HeaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaterViewController.swift; sourceTree = "<group>"; };
+		2CA5A1662608FF9D00E41A12 /* HeaterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaterViewModel.swift; sourceTree = "<group>"; };
+		2CA5A16D2609166D00E41A12 /* LightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewModel.swift; sourceTree = "<group>"; };
+		2CA5A1752609167F00E41A12 /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
+		2CA5A17A260916BA00E41A12 /* RollerShutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShutterViewController.swift; sourceTree = "<group>"; };
+		2CA5A182260916D200E41A12 /* RollerShutterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerShutterViewModel.swift; sourceTree = "<group>"; };
+		2CA5A1882609568B00E41A12 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		2CA5A18D260956A800E41A12 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		2CA5A19626095E9100E41A12 /* UserDefault+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+.swift"; sourceTree = "<group>"; };
+		2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultConfig.swift; sourceTree = "<group>"; };
+		2CA5A1A32609646800E41A12 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +141,8 @@
 		2CA59ADC2607C8B000E41A12 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2CA5A19526095E4C00E41A12 /* Helpers */,
+				2CA5A1562608E83500E41A12 /* Extensions */,
 				2CA5A1182607EEBB00E41A12 /* Services */,
 				2CA59B532607CD1300E41A12 /* Sources */,
 				2CA59B4C2607CC9500E41A12 /* Resources */,
@@ -144,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				2CA59B432607CAC400E41A12 /* Home */,
+				2CA5A15C2608FF2D00E41A12 /* Devices */,
+				2CA5A1872609567400E41A12 /* User */,
 				2CA59B3A2607CA7C00E41A12 /* Common */,
 			);
 			path = Scene;
@@ -160,9 +192,11 @@
 		2CA59B432607CAC400E41A12 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2CA59AE12607C8B000E41A12 /* HomeViewController.swift */,
 				2CA59B442607CAD900E41A12 /* HomeCoordinator.swift */,
+				2CA59AE12607C8B000E41A12 /* HomeViewController.swift */,
 				2CA5A12C2607F54500E41A12 /* HomeViewModel.swift */,
+				2CA5A137260805A700E41A12 /* DataSource */,
+				2CA5A1492608089600E41A12 /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -198,9 +232,89 @@
 			isa = PBXGroup;
 			children = (
 				2CA5A1192607EED200E41A12 /* APIRequest.swift */,
-				2CA5A1212607F01000E41A12 /* APIClient.swift */,
+				2CA5A1212607F01000E41A12 /* HomeService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2CA5A137260805A700E41A12 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A139260805C400E41A12 /* DevicesDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		2CA5A1492608089600E41A12 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1442608089100E41A12 /* DeviceCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2CA5A1562608E83500E41A12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1572608E84B00E41A12 /* UIView+Anchor.swift */,
+				2CA5A19626095E9100E41A12 /* UserDefault+.swift */,
+				2CA5A1A32609646800E41A12 /* Double+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2CA5A15C2608FF2D00E41A12 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A16C2609164F00E41A12 /* RollerShutter */,
+				2CA5A16B2609164900E41A12 /* Light */,
+				2CA5A15D2608FF4900E41A12 /* Heater */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		2CA5A15D2608FF4900E41A12 /* Heater */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A15E2608FF6500E41A12 /* HeaterViewController.swift */,
+				2CA5A1662608FF9D00E41A12 /* HeaterViewModel.swift */,
+			);
+			path = Heater;
+			sourceTree = "<group>";
+		};
+		2CA5A16B2609164900E41A12 /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1752609167F00E41A12 /* LightViewController.swift */,
+				2CA5A16D2609166D00E41A12 /* LightViewModel.swift */,
+			);
+			path = Light;
+			sourceTree = "<group>";
+		};
+		2CA5A16C2609164F00E41A12 /* RollerShutter */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A17A260916BA00E41A12 /* RollerShutterViewController.swift */,
+				2CA5A182260916D200E41A12 /* RollerShutterViewModel.swift */,
+			);
+			path = RollerShutter;
+			sourceTree = "<group>";
+		};
+		2CA5A1872609567400E41A12 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A1882609568B00E41A12 /* UserViewController.swift */,
+				2CA5A18D260956A800E41A12 /* UserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2CA5A19526095E4C00E41A12 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2CA5A19E26095EC500E41A12 /* UserDefaultConfig.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,15 +474,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA5A19F26095EC500E41A12 /* UserDefaultConfig.swift in Sources */,
+				2CA5A13A260805C400E41A12 /* DevicesDataSource.swift in Sources */,
 				2CA59B3C2607CA9B00E41A12 /* Coordinator.swift in Sources */,
 				2CA5A12D2607F54500E41A12 /* HomeViewModel.swift in Sources */,
 				2CA5A11A2607EED200E41A12 /* APIRequest.swift in Sources */,
 				2CA59AE22607C8B000E41A12 /* HomeViewController.swift in Sources */,
+				2CA5A16E2609166D00E41A12 /* LightViewModel.swift in Sources */,
+				2CA5A1582608E84B00E41A12 /* UIView+Anchor.swift in Sources */,
 				2CA59B452607CAD900E41A12 /* HomeCoordinator.swift in Sources */,
+				2CA5A1A42609646800E41A12 /* Double+.swift in Sources */,
+				2CA5A17B260916BA00E41A12 /* RollerShutterViewController.swift in Sources */,
+				2CA5A1672608FF9D00E41A12 /* HeaterViewModel.swift in Sources */,
 				2CA59B322607CA2100E41A12 /* RootCoordinator.swift in Sources */,
 				2CA5A1112607ED4100E41A12 /* Resouces.swift in Sources */,
+				2CA5A1762609167F00E41A12 /* LightViewController.swift in Sources */,
+				2CA5A18E260956A800E41A12 /* UserViewModel.swift in Sources */,
+				2CA5A1452608089100E41A12 /* DeviceCollectionViewCell.swift in Sources */,
+				2CA5A183260916D200E41A12 /* RollerShutterViewModel.swift in Sources */,
 				2CA59ADE2607C8B000E41A12 /* AppDelegate.swift in Sources */,
-				2CA5A1222607F01000E41A12 /* APIClient.swift in Sources */,
+				2CA5A1222607F01000E41A12 /* HomeService.swift in Sources */,
+				2CA5A15F2608FF6500E41A12 /* HeaterViewController.swift in Sources */,
+				2CA5A19726095E9100E41A12 /* UserDefault+.swift in Sources */,
+				2CA5A1892609568B00E41A12 /* UserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -521,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -539,7 +667,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B27HT7JX8Q;
 				INFOPLIST_FILE = "$(SRCROOT)/Home/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +687,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B27HT7JX8Q;
 				INFOPLIST_FILE = "$(SRCROOT)/Home/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

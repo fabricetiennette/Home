@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class APIClient {
+class HomeService {
     
     lazy var requestObservable = APIRequest(config: .default)
 

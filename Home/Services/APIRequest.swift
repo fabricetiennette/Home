@@ -23,11 +23,9 @@ public class APIRequest {
                         if (200...399).contains(httpResponse.statusCode) {
                             let objs = try self.jsonDecoder.decode(Item.self, from: data)
                             observer.onNext(objs)
-                        }
-                        else {
+                        } else {
                             observer.onError(error!)
                         }
-
                     } catch {
                         observer.onError(error)
                     }
