@@ -6,5 +6,6 @@ class HeaterViewModel {
 
     init(device: Device) {
         self.device = device
+        print(device)
     }
 }

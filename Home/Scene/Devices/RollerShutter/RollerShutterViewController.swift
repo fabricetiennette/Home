@@ -9,6 +9,7 @@ class RollerShutterViewController: UIViewController {
         view.backgroundColor = .white
 
         setupView()
+        bind()
     }
 
     private lazy var rollerShutterPositionLabel: UILabel = {
@@ -33,10 +34,7 @@ class RollerShutterViewController: UIViewController {
         slider.tintColor = #colorLiteral(red: 0.3921568627, green: 0.8235294118, blue: 1, alpha: 1)
         slider.thumbTintColor = #colorLiteral(red: 0.3921568627, green: 0.8235294118, blue: 1, alpha: 1)
         slider.isContinuous = true
-        slider.addTarget(self,
-                         action: #selector(didMovePositionSlider),
-                         for: .valueChanged)
-//        slider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 2))
+        slider.addTarget(self, action: #selector(didMovePositionSlider), for: .valueChanged)
         return slider
     }()
 
@@ -50,16 +48,38 @@ class RollerShutterViewController: UIViewController {
         return button
     }()
 
-    @objc func didTapSaveButton() {
-        
+    private lazy var deleteButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Delete",
+                        style: .plain,
+                        target: self,
+                        action: #selector(didTapDeleteButton))
+        return button
+    }()
+
+    @objc func didTapDeleteButton() {
+        viewModel?.deleteDevice()
     }
 
-    @objc func didMovePositionSlider() {
-        
+    @objc func didTapSaveButton() {
+        let position = rollerShutterPositionLabel.text
+        viewModel?.saveChanged(with: position)
+    }
+
+    @objc func didMovePositionSlider(sender: UISlider) {
+        rollerShutterPositionLabel.text = String(Int(sender.value))
     }
 }
 
 private extension RollerShutterViewController {
+
+    func bind() {
+        guard let viewModel = self.viewModel else { return }
+        navigationItem.title = viewModel.device?.deviceName
+        navigationItem.rightBarButtonItem = deleteButton
+
+        rollerShutterPositionSlider.setValue(Float(viewModel.device?.position ?? 0), animated: true)
+        rollerShutterPositionLabel.text = String(viewModel.device?.position ?? 0)
+    }
 
     func setupView() {
         let safeArea = view.safeAreaLayoutGuide

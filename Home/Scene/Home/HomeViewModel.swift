@@ -5,9 +5,10 @@ import RxCocoa
 protocol HomeViewModelDelegate: AnyObject {
     func didTapOnHeater(device: Device)
     func didTapOnLight(device: Device)
-    func didTapOnRollerShutter(device: Device)
+    func didTapOnRollerShutter(deviceID: Int?)
     func didTapOnProfile(user: User)
 }
+
 class HomeViewModel {
 
     weak var delegate: HomeViewModelDelegate?
@@ -28,18 +29,14 @@ class HomeViewModel {
         do {
             try homeService.getDevicesAndUser()
                 .subscribe(onNext: { [weak self] result in
-                    self?.user = result.user
-                    self?.unFilteredDevices = result.devices
-                    self?.devicesHandler?(result.devices)
+                    self?.setDeviceAndUser(with: result)
                 }, onError: { error in
                     print(error.localizedDescription)
-                }, onCompleted: {
-                    print("completed event")
                 }).disposed(by: disposeBag)
         } catch {}
     }
 
-    func filteredDevices(producTypeName: String){
+    func filteredDevices(producTypeName: String) {
         switch producTypeName {
         case "All":
             devices = unFilteredDevices
@@ -58,14 +55,24 @@ class HomeViewModel {
         case "Light":
             delegate?.didTapOnLight(device: selectedDevice)
         case "RollerShutter":
-            delegate?.didTapOnRollerShutter(device: selectedDevice)
-        default:
-            break
+            delegate?.didTapOnRollerShutter(deviceID: selectedDevice.deviceId)
+        default: break
         }
     }
 
     func showUser() {
         guard let user = user else { return }
         delegate?.didTapOnProfile(user: user)
+    }
+
+    private func setDeviceAndUser(with result: Response) {
+        user = result.user
+        if UserDefaultConfig.device == [] {
+            UserDefaultConfig.device = result.devices
+        }
+        if unFilteredDevices == [] {
+            devicesHandler?(UserDefaultConfig.device)
+        }
+        unFilteredDevices = UserDefaultConfig.device
     }
 }

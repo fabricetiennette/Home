@@ -13,9 +13,12 @@ class HomeViewController: UIViewController {
         navigationItem.title = "Devices"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-        bind()
         setupView()
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bind()
     }
 
     private lazy var profileButton: UIBarButtonItem = {
@@ -35,10 +38,7 @@ class HomeViewController: UIViewController {
     @objc func handleSegmentChange() {
         guard let sc = segmentedControl,
               let producTypeName = sc.titleForSegment(at: sc.selectedSegmentIndex) else { return }
-        DispatchQueue.main.async {
-            self.viewModel?.filteredDevices(producTypeName: producTypeName)
-            self.devicesCollectionView?.reloadData()
-        }
+        viewModel?.filteredDevices(producTypeName: producTypeName)
     }
 
     func bind() {

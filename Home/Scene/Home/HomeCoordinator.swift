@@ -12,6 +12,10 @@ class HomeCoordinator: Coordinator<UINavigationController> {
             self.rootView.pushViewController(homeViewController, animated: true)
         }
     }
+
+    func back() {
+        self.rootView.popViewController(animated: true)
+    }
 }
 
 extension HomeCoordinator: HomeViewModelDelegate {
@@ -36,10 +40,11 @@ extension HomeCoordinator: HomeViewModelDelegate {
         }
     }
     
-    func didTapOnRollerShutter(device: Device) {
+    func didTapOnRollerShutter(deviceID: Int?) {
         DispatchQueue.main.async {
             let rollerShutterViewController = RollerShutterViewController()
-            let viewModel = RollerShutterViewModel(device:device)
+            let viewModel = RollerShutterViewModel(deviceID: deviceID)
+            viewModel.delegate = self
             rollerShutterViewController.viewModel = viewModel
             self.rootView.pushViewController(rollerShutterViewController, animated: true)
         }
@@ -71,6 +76,12 @@ extension HomeCoordinator: UserViewModelDelegate {
 extension HomeCoordinator: UpdateUserViewModelDelegate {
     
     func didTapOnSave() {
-        self.rootView.popViewController(animated: true)
+        back()
+    }
+}
+
+extension HomeCoordinator: RollerShutterViewModelDelegate {
+    func didTapOnDelete() {
+        back()
     }
 }

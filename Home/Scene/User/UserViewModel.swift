@@ -3,6 +3,7 @@ import Foundation
 protocol UserViewModelDelegate: AnyObject {
     func didTapOnUpdate()
 }
+
 class UserViewModel {
 
     weak var delegate: UserViewModelDelegate?
