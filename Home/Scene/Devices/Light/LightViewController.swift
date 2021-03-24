@@ -141,6 +141,7 @@ private extension LightViewController {
     func bind() {
         guard let viewModel = self.viewModel else { return }
         navigationItem.title = viewModel.device?.deviceName
+        navigationItem.rightBarButtonItem = deleteButton
 
         viewModel.lightMode = { [weak self] mode in
             switch mode {

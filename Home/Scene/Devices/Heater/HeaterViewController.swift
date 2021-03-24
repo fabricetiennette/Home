@@ -8,6 +8,7 @@ class HeaterViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupView()
+        bind()
     }
 
     private lazy var heaterSwitch: UISwitch = {
@@ -43,7 +44,6 @@ class HeaterViewController: UIViewController {
     private lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "18"
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.borderWidth = 1.5
         label.layer.cornerRadius = 10
@@ -80,24 +80,55 @@ class HeaterViewController: UIViewController {
         return button
     }()
 
+    private lazy var deleteButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Delete",
+                        style: .plain,
+                        target: self,
+                        action: #selector(didTapDeleteButton))
+        return button
+    }()
+
+    @objc private func didTapDeleteButton() {
+        viewModel?.deleteDevice()
+    }
+
     @objc func heaterSwitchValueDidChange() {
-        
+        viewModel?.observeModeSwitchValue(withOnvalue: heaterSwitch.isOn)
     }
 
     @objc func didTapPlusButton() {
-        
+        viewModel?.didPressPlusButton()
     }
 
     @objc func didTapMinusButton() {
-        
+        viewModel?.didPressMinusButton()
     }
 
     @objc func didTapSaveButton() {
-        
+        viewModel?.saveChanged()
     }
 }
 
 private extension HeaterViewController {
+
+    func bind() {
+        guard let viewModel = self.viewModel else { return }
+        navigationItem.title = viewModel.device?.deviceName
+        navigationItem.rightBarButtonItem = deleteButton
+
+        viewModel.heaterMode = { [weak self] mode in
+            switch mode {
+            case .off:
+                self?.heaterSwitch.setOn(false, animated: true)
+            case .on:
+                self?.heaterSwitch.setOn(true, animated: true)
+            }
+        }
+        viewModel.heaterTemperature = { [weak self] temperature in
+            self?.temperatureLabel.text = temperature
+        }
+        viewModel.setupModeAndTemperature()
+    }
 
     func setupView() {
         let stackView = UIStackView(arrangedSubviews: [OnAndOffButton(), temperatureView(), heaterSaveButton])

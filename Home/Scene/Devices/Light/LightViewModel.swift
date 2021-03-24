@@ -1,7 +1,7 @@
 import Foundation
 
 protocol LightViewModelDelegate: AnyObject {
-    func didTapOnDelete()
+    func didTapOnDeleteLightView()
 }
 
 enum LightMode: String {
@@ -78,7 +78,7 @@ class LightViewModel {
         let devices = UserDefaultConfig.device
         let deviceList = devices.filter { $0.deviceId != deviceID }
         UserDefaultConfig.device = deviceList
-        delegate?.didTapOnDelete()
+        delegate?.didTapOnDeleteLightView()
     }
 
     func observceSwithValueChanged(valueMode: Bool){

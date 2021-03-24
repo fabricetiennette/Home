@@ -34,6 +34,7 @@ extension HomeCoordinator: HomeViewModelDelegate {
         DispatchQueue.main.async {
             let lightViewController = LightViewController()
             let viewModel = LightViewModel(deviceID: deviceID)
+            viewModel.delegate = self
             lightViewController.viewModel = viewModel
             self.rootView.pushViewController(lightViewController, animated: true)
         }
@@ -49,10 +50,11 @@ extension HomeCoordinator: HomeViewModelDelegate {
         }
     }
 
-    func didTapOnHeater(device: Device) {
+    func didTapOnHeater(deviceID: Int?) {
         DispatchQueue.main.async {
             let heaterViewController = HeaterViewController()
-            let viewModel = HeaterViewModel(device:device)
+            let viewModel = HeaterViewModel(deviceID: deviceID)
+            viewModel.delegate = self
             heaterViewController.viewModel = viewModel
             self.rootView.pushViewController(heaterViewController, animated: true)
         }
@@ -80,7 +82,22 @@ extension HomeCoordinator: UpdateUserViewModelDelegate {
 }
 
 extension HomeCoordinator: RollerShutterViewModelDelegate {
-    func didTapOnDelete() {
+
+    func didTapOnDeleteRollerShutterView() {
+        back()
+    }
+}
+
+extension HomeCoordinator: HeaterViewModelDelegate {
+
+    func didTapOnDeleteHeaterView() {
+        back()
+    }
+}
+
+extension HomeCoordinator: LightViewModelDelegate {
+
+    func didTapOnDeleteLightView() {
         back()
     }
 }

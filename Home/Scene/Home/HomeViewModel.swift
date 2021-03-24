@@ -3,7 +3,7 @@ import RxSwift
 import RxCocoa
 
 protocol HomeViewModelDelegate: AnyObject {
-    func didTapOnHeater(device: Device)
+    func didTapOnHeater(deviceID: Int?)
     func didTapOnLight(deviceID: Int?)
     func didTapOnRollerShutter(deviceID: Int?)
     func didTapOnProfile(user: User)
@@ -51,7 +51,7 @@ class HomeViewModel {
     func getSelectedDevice(selectedDevice: Device) {
         switch selectedDevice.productType {
         case "Heater":
-            delegate?.didTapOnHeater(device: selectedDevice)
+            delegate?.didTapOnHeater(deviceID: selectedDevice.deviceId)
         case "Light":
             delegate?.didTapOnLight(deviceID: selectedDevice.deviceId)
         case "RollerShutter":
