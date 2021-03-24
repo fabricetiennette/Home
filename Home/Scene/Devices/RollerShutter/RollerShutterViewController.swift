@@ -43,13 +43,13 @@ class RollerShutterViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.3921568627, green: 0.8235294118, blue: 1, alpha: 1)
         button.layer.cornerRadius = 10
-        button.setTitle("Save", for: .normal)
+        button.setTitle(L1s.save, for: .normal)
         button.clipsToBounds = true
         return button
     }()
 
     private lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Delete",
+        let button = UIBarButtonItem(title: L1s.delete,
                         style: .plain,
                         target: self,
                         action: #selector(didTapDeleteButton))

@@ -10,7 +10,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Devices"
+        navigationItem.title = L1s.homeTitle
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
         setupView()
@@ -82,7 +82,7 @@ private extension HomeViewController {
     }
 
     func setupSegmentedController() -> UISegmentedControl? {
-        segmentedControl = UISegmentedControl(items: ["All", "Heater", "Light", "Shutters"])
+        segmentedControl = UISegmentedControl(items: [L1s.all, L1s.heater, L1s.light, L1s.shutter])
         segmentedControl?.selectedSegmentIndex = 0
         segmentedControl?.addTarget(self, action: #selector(handleSegmentChange), for: .valueChanged)
         return segmentedControl

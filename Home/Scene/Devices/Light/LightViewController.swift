@@ -26,7 +26,7 @@ class LightViewController: UIViewController {
 
     private lazy var modeOnLabel: UILabel = {
         let label = UILabel()
-        label.text = "ON"
+        label.text = L1s.on
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -35,7 +35,7 @@ class LightViewController: UIViewController {
 
     private lazy var modeOffLabel: UILabel = {
         let label = UILabel()
-        label.text = "OFF"
+        label.text = L1s.off
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -73,7 +73,7 @@ class LightViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1)
         button.layer.cornerRadius = 10
-        button.setTitle("Save", for: .normal)
+        button.setTitle(L1s.save, for: .normal)
         button.clipsToBounds = true
         return button
     }()
@@ -107,7 +107,7 @@ class LightViewController: UIViewController {
     }()
 
     private lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Delete",
+        let button = UIBarButtonItem(title: L1s.delete,
                         style: .plain,
                         target: self,
                         action: #selector(didTapDeleteButton))

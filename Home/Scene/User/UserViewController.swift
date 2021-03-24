@@ -100,7 +100,7 @@ class UserViewController: UIViewController {
     }()
 
     private lazy var updateProfileButton: UIBarButtonItem = {
-        let updateButton = UIBarButtonItem(title: "update",
+        let updateButton = UIBarButtonItem(title: L1s.update,
                         style: .plain,
                         target: self,
                         action: #selector(didTapUpdateProfileButton))
@@ -132,7 +132,6 @@ private extension UserViewController {
     }
 
     func setupView() {
-        navigationItem.title = "Profile"
         let safeArea = view.safeAreaLayoutGuide
         profileImageView.image = UIImage(named: "account")
         view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)

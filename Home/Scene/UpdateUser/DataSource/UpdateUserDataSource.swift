@@ -4,13 +4,13 @@ import UIKit
 class UpdateUserDataSource: NSObject {
 
     var saveItem: [String] = []
-    let textField = ["update_profile_first_name",
-                             "update_profile_last_name",
-                             "update_profile_street_number",
-                             "update_profile_street_name",
-                             "update_profile_postal_code",
-                             "update_profile_city",
-                             "update_profile_country"]
+    let textField = [L1s.updateFirstName,
+                     L1s.updateLastName,
+                     L1s.updateStreetName,
+                     L1s.updateStreetNumber,
+                     L1s.updatePostCode,
+                     L1s.updateCity,
+                     L1s.updateCountry]
 
     var user: [String?] = []
 

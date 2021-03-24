@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  Home
+
+  Created by Fabrice Etiennette on 24/03/2021.
+  
+*/
+
+"home_title" = "Mes Objets";
+"filter_title" = "Filtrer";
+"alert_networkError" = "Veuillez réesayer ultérieurement...";
+"alert_no_devices" = "Pas d'objet trouvés. Veuillez réinitialiser votre comptre dans votre profil.";
+"alert_max_temperature" = "Vous avez atteint la température maximale";
+"alert_min_temperature" = "Vous avez atteint la température minimale";
+"alert_deletion" = "Voulez-vous vraiment supprimer cet objet ?";
+"alert_no_user" = "Problème de chargement des données. Veuillez réessayer ultérieurement.";
+"filters_alert" = "Aucun objet ne correspond à votre recherche";
+"filter_search_title" = "Chercher";
+"heater_object" = "Radiateur";
+"roller_shutter_object" = "Volet";
+"light_object" = "Lumière";
+"position_filter" = "Position :";
+"intensity_filter" = "Intensité :";
+"temperature_filter" = "Température :";
+"mode_filter" = "Mode :";
+"on_status" = "Activé";
+"off_status" = "Désactivé";
+"save_button" = "Enregistrer";
+"update_profile" = "Modifier";
+"update_profile_first_name" = "Prénom :";
+"update_profile_last_name" = "Nom :";
+"update_profile_street_number" = "N° de rue :";
+"update_profile_street_name" = "Nom de rue :";
+"update_profile_postal_code" = "Code postal :";
+"update_profile_city" = "Ville :";
+"update_profile_country" = "Pays :";
+"profile_birth_date_title" = "Né le : ";
+"all_all" = "Tout";
+"delete" = "Supprimer";
+"shutter" = "Volet";

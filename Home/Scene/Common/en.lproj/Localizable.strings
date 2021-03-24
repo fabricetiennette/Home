@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  Home
+
+  Created by Fabrice Etiennette on 24/03/2021.
+  
+*/
+
+"home_title" = "Devices";
+"filter_title" = "Filter";
+"alert_networkError" = "PLease try again later...";
+"alert_no_devices" = "No objects found. Please reset your account in your profile";
+"alert_max_temperature" = "You've reached the maximum temperature";
+"alert_min_temperature" = "You've reached the minimum temperature";
+"alert_deletion" = "Do you really want to delete this object ?";
+"alert_no_user" = "Data loading probleme. Please retry later.";
+"filters_alert" = "No object matches your search";
+"filter_search_title" = "Search";
+"heater_object" = "Heater";
+"roller_shutter_object" = "Roller Shutter";
+"light_object" = "Light";
+"position_filter" = "Position :";
+"intensity_filter" = "Intensity :";
+"temperature_filter" = "Temperature :";
+"mode_filter" = "Mode :";
+"on_status" = "On";
+"off_status" = "Off";
+"save_button" = "Save";
+"update_profile" = "Update";
+"update_profile_first_name" = "First name :";
+"update_profile_last_name" = "Last name :";
+"update_profile_street_number" = "Street number :";
+"update_profile_street_name" = "Street name :";
+"update_profile_postal_code" = "Postal code :";
+"update_profile_city" = "City :";
+"update_profile_country" = "Country :";
+"profile_birth_date_title" = "Born on : ";
+"all_all" = "All";
+"delete" = "Delete";
+"shutter" = "Shutters";

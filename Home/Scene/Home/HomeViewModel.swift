@@ -38,10 +38,14 @@ class HomeViewModel {
 
     func filteredDevices(producTypeName: String) {
         switch producTypeName {
-        case "All":
+        case L1s.all:
             devices = unFilteredDevices
-        case "Shutters":
+        case L1s.shutter:
             devices = unFilteredDevices.filter({ $0.productType == "RollerShutter" })
+        case L1s.light:
+            devices = unFilteredDevices.filter({ $0.productType == "Light" })
+        case L1s.heater:
+            devices = unFilteredDevices.filter({ $0.productType == "Heater" })
         default:
             devices = unFilteredDevices.filter({ $0.productType == producTypeName })
         }

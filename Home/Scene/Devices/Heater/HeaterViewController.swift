@@ -25,7 +25,7 @@ class HeaterViewController: UIViewController {
 
     private lazy var modeOnLabel: UILabel = {
         let label = UILabel()
-        label.text = "ON"
+        label.text = L1s.on
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -34,7 +34,7 @@ class HeaterViewController: UIViewController {
 
     private lazy var modeOffLabel: UILabel = {
         let label = UILabel()
-        label.text = "OFF"
+        label.text = L1s.off
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -74,14 +74,14 @@ class HeaterViewController: UIViewController {
         button.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.368627451, green: 0.3607843137, blue: 0.9019607843, alpha: 1)
         button.layer.cornerRadius = 10
-        button.setTitle("Save", for: .normal)
+        button.setTitle(L1s.save, for: .normal)
         button.clipsToBounds = true
         button.anchor(width: 125, height: 50)
         return button
     }()
 
     private lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "Delete",
+        let button = UIBarButtonItem(title: L1s.delete,
                         style: .plain,
                         target: self,
                         action: #selector(didTapDeleteButton))

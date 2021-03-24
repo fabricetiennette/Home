@@ -22,7 +22,7 @@ class UpdateUserViewController: UIViewController {
     }()
 
     private lazy var saveInformationsButton: UIBarButtonItem = {
-        let updateButton = UIBarButtonItem(title: "Save",
+        let updateButton = UIBarButtonItem(title: L1s.save,
                         style: .plain,
                         target: self,
                         action: #selector(didTapUpdateProfileButton))
