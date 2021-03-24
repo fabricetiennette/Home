@@ -9,6 +9,7 @@ class LightViewController: UIViewController {
         view.backgroundColor = .white
 
         setupView()
+        bind()
     }
 
     private lazy var lightSwitch: UISwitch = {
@@ -49,7 +50,6 @@ class LightViewController: UIViewController {
         label.layer.cornerRadius = 10
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
-        label.text = "12"
         label.clipsToBounds = true
         return label
     }()
@@ -105,21 +105,57 @@ class LightViewController: UIViewController {
 
         return view
     }()
+
+    private lazy var deleteButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Delete",
+                        style: .plain,
+                        target: self,
+                        action: #selector(didTapDeleteButton))
+        return button
+    }()
+
+    @objc private func didTapDeleteButton() {
+        viewModel?.deleteDevice()
+    }
     
     @objc func lightSwitchValueDidChange() {
-        
+        let mode = lightSwitch.isOn
+        viewModel?.observceSwithValueChanged(valueMode: mode)
+        if let number = Int(lightLabel.text ?? "") {
+            lightSlider.setValue(Float(number), animated: true)
+        }
     }
 
-    @objc func didMoveSlider() {
-        
+    @objc func didMoveSlider(sender: UISlider) {
+        lightLabel.text = String(Int(sender.value))
+        viewModel?.observeLightIntensity(with: Int(lightSlider.value))
     }
 
     @objc func didTapSaveButton() {
-        
+        viewModel?.saveChanged()
     }
 }
 
 private extension LightViewController {
+
+    func bind() {
+        guard let viewModel = self.viewModel else { return }
+        navigationItem.title = viewModel.device?.deviceName
+
+        viewModel.lightMode = { [weak self] mode in
+            switch mode {
+            case .off:
+                self?.lightSwitch.setOn(false, animated: true)
+            case .on:
+                self?.lightSwitch.setOn(true, animated: true)
+            }
+        }
+        viewModel.lightIntensity = { [weak self] value in
+            self?.lightLabel.text = value
+        }
+        lightSlider.setValue(Float(viewModel.device?.intensity ?? 0), animated: true)
+        viewModel.setupLightAndIntensity()
+    }
 
     func setupView() {
         let safeArea = view.safeAreaLayoutGuide

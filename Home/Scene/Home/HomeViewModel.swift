@@ -4,7 +4,7 @@ import RxCocoa
 
 protocol HomeViewModelDelegate: AnyObject {
     func didTapOnHeater(device: Device)
-    func didTapOnLight(device: Device)
+    func didTapOnLight(deviceID: Int?)
     func didTapOnRollerShutter(deviceID: Int?)
     func didTapOnProfile(user: User)
 }
@@ -53,7 +53,7 @@ class HomeViewModel {
         case "Heater":
             delegate?.didTapOnHeater(device: selectedDevice)
         case "Light":
-            delegate?.didTapOnLight(device: selectedDevice)
+            delegate?.didTapOnLight(deviceID: selectedDevice.deviceId)
         case "RollerShutter":
             delegate?.didTapOnRollerShutter(deviceID: selectedDevice.deviceId)
         default: break
@@ -70,7 +70,7 @@ class HomeViewModel {
         if UserDefaultConfig.device == [] {
             UserDefaultConfig.device = result.devices
         }
-        if unFilteredDevices == [] {
+        if UserDefaultConfig.device.count != unFilteredDevices.count {
             devicesHandler?(UserDefaultConfig.device)
         }
         unFilteredDevices = UserDefaultConfig.device

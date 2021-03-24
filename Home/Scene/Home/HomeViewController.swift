@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     @objc func handleSegmentChange() {
         guard let sc = segmentedControl,
               let producTypeName = sc.titleForSegment(at: sc.selectedSegmentIndex) else { return }
-        viewModel?.filteredDevices(producTypeName: producTypeName)
+        self.viewModel?.filteredDevices(producTypeName: producTypeName)
     }
 
     func bind() {

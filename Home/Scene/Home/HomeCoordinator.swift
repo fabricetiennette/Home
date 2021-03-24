@@ -29,17 +29,16 @@ extension HomeCoordinator: HomeViewModelDelegate {
             self.rootView.pushViewController(userViewController, animated: true)
         }
     }
-    
 
-    func didTapOnLight(device: Device) {
+    func didTapOnLight(deviceID: Int?) {
         DispatchQueue.main.async {
             let lightViewController = LightViewController()
-            let viewModel = LightViewModel(device:device)
+            let viewModel = LightViewModel(deviceID: deviceID)
             lightViewController.viewModel = viewModel
             self.rootView.pushViewController(lightViewController, animated: true)
         }
     }
-    
+
     func didTapOnRollerShutter(deviceID: Int?) {
         DispatchQueue.main.async {
             let rollerShutterViewController = RollerShutterViewController()
