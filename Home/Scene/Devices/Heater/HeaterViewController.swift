@@ -56,7 +56,6 @@ class HeaterViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "plusButton"), for: .normal)
         button.addTarget(self, action: #selector(didTapPlusButton), for: .touchUpInside)
-        button.anchor(width: 80, height: 80)
         return button
     }()
 
@@ -64,7 +63,6 @@ class HeaterViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "minusButton"), for: .normal)
         button.addTarget(self, action: #selector(didTapMinusButton), for: .touchUpInside)
-        button.anchor(width: 80, height: 80)
         return button
     }()
 
@@ -75,7 +73,6 @@ class HeaterViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.setTitle(L1s.save, for: .normal)
         button.clipsToBounds = true
-        button.anchor(width: 125, height: 50)
         return button
     }()
 
@@ -87,6 +84,60 @@ class HeaterViewController: UIViewController {
             action: #selector(didTapDeleteButton)
         )
         return button
+    }()
+
+    private lazy var switchView: UIView = {
+        let view = UIView()
+        view.addSubview(modeOffLabel)
+        modeOffLabel.anchor(top: view.topAnchor,
+                            bottom: view.bottomAnchor)
+        modeOffLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        view.addSubview(heaterSwitch)
+        heaterSwitch.anchor(
+            top: view.topAnchor,
+            left: modeOffLabel.rightAnchor,
+            bottom: view.bottomAnchor,
+            paddingLeft: 15
+        )
+        heaterSwitch.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        heaterSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        view.addSubview(modeOnLabel)
+        modeOnLabel.anchor(
+            top: view.topAnchor,
+            left: heaterSwitch.rightAnchor,
+            bottom: view.bottomAnchor,
+            paddingLeft: 15
+        )
+        modeOnLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        return view
+    }()
+
+    private lazy var temperatureView: UIView = {
+        let view = UIView()
+        view.addSubview(heaterMinusButton)
+        heaterMinusButton.anchor(top: view.topAnchor,
+                                 bottom: view.bottomAnchor)
+        heaterMinusButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        view.addSubview(temperatureLabel)
+        temperatureLabel.anchor(top: view.topAnchor,
+                               left: heaterMinusButton.rightAnchor,
+                               bottom: view.bottomAnchor,
+                               paddingLeft: 15)
+        temperatureLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        temperatureLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        view.addSubview(heaterPlusButton)
+        heaterPlusButton.anchor(top: view.topAnchor,
+                                left: temperatureLabel.rightAnchor,
+                                bottom: view.bottomAnchor,
+                                paddingLeft: 15)
+        heaterPlusButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        return view
     }()
 
     @objc private func didTapDeleteButton() {
@@ -132,43 +183,33 @@ private extension HeaterViewController {
     }
 
     func setupView() {
+        let safeArea = view.safeAreaLayoutGuide
         view.backgroundColor = .white
-        let stackView = UIStackView(
-            arrangedSubviews: [OnAndOffButton(), temperatureView(), heaterSaveButton]
-        )
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 10
-        view.addSubview(stackView)
-        stackView.anchor(
-            top: view.safeAreaLayoutGuide.topAnchor,
-            left: view.leftAnchor,
-            bottom: view.bottomAnchor,
-            right: view.rightAnchor,
-            paddingBottom: 25
-        )
-    }
+        view.addSubview(heaterSaveButton)
 
-    func OnAndOffButton() -> UIStackView {
-        let buttonStack = UIStackView()
-        buttonStack.addArrangedSubview(modeOffLabel)
-        buttonStack.addArrangedSubview(heaterSwitch)
-        buttonStack.addArrangedSubview(modeOnLabel)
-        buttonStack.axis = .horizontal
-        buttonStack.alignment = .center
-        buttonStack.spacing = 5
-        return buttonStack
-    }
+        view.addSubview(switchView)
 
-    func temperatureView() -> UIStackView {
-        let tempStack = UIStackView()
-        tempStack.addArrangedSubview(heaterMinusButton)
-        tempStack.addArrangedSubview(temperatureLabel)
-        tempStack.addArrangedSubview(heaterPlusButton)
-        tempStack.axis = .horizontal
-        tempStack.alignment = .center
-        tempStack.spacing = 10
-        return tempStack
+        switchView.anchor(
+            top: safeArea.topAnchor,
+            paddingTop: 70,
+            width: 100,
+            height: 30
+        )
+        switchView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
+        view.addSubview(temperatureView)
+        temperatureView.anchor(width: 200, height: 80)
+        temperatureView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
+        temperatureView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor).isActive = true
+
+        temperatureLabel.anchor(width: 80, height: 80)
+        heaterSaveButton.anchor(
+            bottom: safeArea.bottomAnchor,
+            paddingTop: 15,
+            paddingBottom: 15,
+            width: 125,
+            height: 50
+        )
+        heaterSaveButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
     }
 }
