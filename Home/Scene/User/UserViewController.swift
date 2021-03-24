@@ -20,23 +20,27 @@ class UserViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(profileImageView)
 
-        // Profile Image View
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor,
-                                paddingTop: 100,
-                                width: 150,
-                                height: 150)
+        profileImageView.anchor(
+            top: view.topAnchor,
+            paddingTop: 100,
+            width: 150,
+            height: 150
+        )
 
-        // User Name Label
         view.addSubview(nameLabel)
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: profileImageView.bottomAnchor,
-                         paddingTop: 10)
+        nameLabel.anchor(
+            top: profileImageView.bottomAnchor,
+            paddingTop: 10
+        )
 
-        // User Age Label
         view.addSubview(ageLabel)
         ageLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        ageLabel.anchor(top: nameLabel.bottomAnchor, paddingTop: 4)
+        ageLabel.anchor(
+            top: nameLabel.bottomAnchor,
+            paddingTop: 4
+        )
 
         return view
     }()
@@ -100,10 +104,12 @@ class UserViewController: UIViewController {
     }()
 
     private lazy var updateProfileButton: UIBarButtonItem = {
-        let updateButton = UIBarButtonItem(title: L1s.update,
-                        style: .plain,
-                        target: self,
-                        action: #selector(didTapUpdateProfileButton))
+        let updateButton = UIBarButtonItem(
+            title: L1s.update,
+            style: .plain,
+            target: self,
+            action: #selector(didTapUpdateProfileButton)
+        )
         return updateButton
     }()
 
@@ -136,14 +142,19 @@ private extension UserViewController {
         profileImageView.image = UIImage(named: "account")
         view.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.7254901961, blue: 0.3294117647, alpha: 1)
         view.addSubview(containerView)
-        containerView.anchor(top: view.topAnchor,
-                             left: safeArea.leftAnchor,
-                             right: safeArea.rightAnchor,
-                             height: 350)
+        containerView.anchor(
+            top: view.topAnchor,
+            left: safeArea.leftAnchor,
+            right: safeArea.rightAnchor,
+            height: 350
+        )
+    
         view.addSubview(adressStackView)
-        adressStackView.anchor(top: containerView.bottomAnchor,
-                               left: safeArea.leftAnchor,
-                               right: safeArea.rightAnchor,
-                               paddingTop: 40)
+        adressStackView.anchor(
+            top: containerView.bottomAnchor,
+            left: safeArea.leftAnchor,
+            right: safeArea.rightAnchor,
+            paddingTop: 40
+        )
     }
 }

@@ -22,10 +22,3 @@ class L1s {
     static let update = "update_profile".localized
     static let shutter = "shutter".localized
 }
-
-//"alert_networkError" = "Veuillez réesayer ultérieurement...";
-//"alert_no_devices" = "Pas d'objet trouvés. Veuillez réinitialiser votre comptre dans votre profil.";
-//"alert_max_temperature" = "Vous avez atteint la température maximale";
-//"alert_min_temperature" = "Vous avez atteint la température minimale";
-//"alert_deletion" = "Voulez-vous vraiment supprimer cet objet ?";
-//"alert_no_user" = "Problème de chargement des données. Veuillez réessayer ultérieurement.";

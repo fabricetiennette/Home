@@ -6,7 +6,6 @@ class HeaterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupView()
         bind()
     }
@@ -81,10 +80,12 @@ class HeaterViewController: UIViewController {
     }()
 
     private lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: L1s.delete,
-                        style: .plain,
-                        target: self,
-                        action: #selector(didTapDeleteButton))
+        let button = UIBarButtonItem(
+            title: L1s.delete,
+            style: .plain,
+            target: self,
+            action: #selector(didTapDeleteButton)
+        )
         return button
     }()
 
@@ -131,14 +132,22 @@ private extension HeaterViewController {
     }
 
     func setupView() {
-        let stackView = UIStackView(arrangedSubviews: [OnAndOffButton(), temperatureView(), heaterSaveButton])
+        view.backgroundColor = .white
+        let stackView = UIStackView(
+            arrangedSubviews: [OnAndOffButton(), temperatureView(), heaterSaveButton]
+        )
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillProportionally
         stackView.spacing = 10
         view.addSubview(stackView)
-        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 25)
-        
+        stackView.anchor(
+            top: view.safeAreaLayoutGuide.topAnchor,
+            left: view.leftAnchor,
+            bottom: view.bottomAnchor,
+            right: view.rightAnchor,
+            paddingBottom: 25
+        )
     }
 
     func OnAndOffButton() -> UIStackView {

@@ -86,6 +86,10 @@ extension HomeCoordinator: RollerShutterViewModelDelegate {
     func didTapOnDeleteRollerShutterView() {
         back()
     }
+
+    func didTapOnSaveRollerShutter() {
+        back()
+    }
 }
 
 extension HomeCoordinator: HeaterViewModelDelegate {
@@ -93,11 +97,19 @@ extension HomeCoordinator: HeaterViewModelDelegate {
     func didTapOnDeleteHeaterView() {
         back()
     }
+
+    func didTapOnSaveHeater() {
+        back()
+    }
 }
 
 extension HomeCoordinator: LightViewModelDelegate {
 
     func didTapOnDeleteLightView() {
+        back()
+    }
+
+    func didTapOnSaveLight() {
         back()
     }
 }

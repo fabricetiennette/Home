@@ -4,7 +4,7 @@ import RxCocoa
 
 class HomeService {
     
-    lazy var requestObservable = APIRequest(config: .default)
+    private lazy var requestObservable = APIRequest(config: .default)
 
     func getDevicesAndUser() throws -> Observable<Response> {
         var request = URLRequest(url: URL(string:"http://storage42.com/modulotest/data.json")!)

@@ -1,10 +1,3 @@
-//
-//  UpdateProfileTableViewCell.swift
-//  Home
-//
-//  Created by Fabrice Etiennette on 23/03/2021.
-//
-
 import UIKit
 
 class UpdateProfileTableViewCell: UITableViewCell {
@@ -29,14 +22,18 @@ class UpdateProfileTableViewCell: UITableViewCell {
     func configure(userInfo: String, userData: String?) {
         contentView.addSubview(dataTextField)
         contentView.addSubview(informationTypeLabel)
-        informationTypeLabel.anchor(top: contentView.topAnchor,
-                                    left: contentView.leftAnchor,
-                                    bottom: contentView.bottomAnchor,
-                                    paddingLeft: 15,
-                                    width: 150)
+        informationTypeLabel.anchor(
+            top: contentView.topAnchor,
+            left: contentView.leftAnchor,
+            bottom: contentView.bottomAnchor,
+            paddingLeft: 15,
+            width: 150
+        )
         dataTextField.centerYAnchor.constraint(equalTo: informationTypeLabel.centerYAnchor, constant: 0).isActive = true
-        dataTextField.anchor(left: informationTypeLabel.rightAnchor,
-                             paddingLeft: 10)
+        dataTextField.anchor(
+            left: informationTypeLabel.rightAnchor,
+            paddingLeft: 10
+        )
         informationTypeLabel.text = userInfo
         if let userData = userData {
             dataTextField.text = userData

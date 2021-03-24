@@ -22,10 +22,12 @@ class UpdateUserViewController: UIViewController {
     }()
 
     private lazy var saveInformationsButton: UIBarButtonItem = {
-        let updateButton = UIBarButtonItem(title: L1s.save,
-                        style: .plain,
-                        target: self,
-                        action: #selector(didTapUpdateProfileButton))
+        let updateButton = UIBarButtonItem(
+            title: L1s.save,
+            style: .plain,
+            target: self,
+            action: #selector(didTapUpdateProfileButton)
+        )
         return updateButton
     }()
 
@@ -55,9 +57,11 @@ private extension UpdateUserViewController {
         view.addSubview(tableView)
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDataSource
-        tableView.anchor(top: view.topAnchor,
-                         left: view.leftAnchor,
-                         bottom: view.bottomAnchor,
-                         right: view.rightAnchor)
+        tableView.anchor(
+            top: view.topAnchor,
+            left: view.leftAnchor,
+            bottom: view.bottomAnchor,
+            right: view.rightAnchor
+        )
     }
 }

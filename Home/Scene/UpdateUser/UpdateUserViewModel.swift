@@ -30,7 +30,7 @@ class UpdateUserViewModel {
 
     func saveUserInfo(info: [String]) {
         guard let user = UserDefaultConfig.user.first else { return }
-        let address = Address(city: info[5], postalCode: Int(info[4]), street: info[3], streetCode: info[3], country: info[6])
+        let address = Address(city: info[5], postalCode: Int(info[4]), street: info[3], streetCode: info[2], country: info[6])
         UserDefaultConfig.user = [User(firstName: info[0], lastName: info[1], address: address, birthDate: user.birthDate)]
         delegate?.didTapOnSave()
     }

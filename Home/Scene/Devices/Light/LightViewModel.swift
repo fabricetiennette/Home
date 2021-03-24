@@ -2,6 +2,7 @@ import Foundation
 
 protocol LightViewModelDelegate: AnyObject {
     func didTapOnDeleteLightView()
+    func didTapOnSaveLight()
 }
 
 enum LightMode: String {
@@ -55,7 +56,6 @@ class LightViewModel {
         intensity = value
     }
 
-
     func saveChanged() {
         guard let device = device, let mode = mode?.rawValue else { return }
         let devices = UserDefaultConfig.device
@@ -72,6 +72,7 @@ class LightViewModel {
         var deviceList = devices.filter { $0.deviceId != deviceID }
         deviceList.insert(saveDevice, at: index ?? 0)
         UserDefaultConfig.device = deviceList
+        delegate?.didTapOnSaveLight()
     }
 
     func deleteDevice() {

@@ -2,6 +2,7 @@ import Foundation
 
 protocol RollerShutterViewModelDelegate: AnyObject {
     func didTapOnDeleteRollerShutterView()
+    func didTapOnSaveRollerShutter()
 }
 
 class RollerShutterViewModel {
@@ -36,6 +37,7 @@ class RollerShutterViewModel {
         var deviceList = devices.filter { $0.deviceId != deviceID }
         deviceList.insert(saveDevice, at: index ?? 0)
         UserDefaultConfig.device = deviceList
+        delegate?.didTapOnSaveRollerShutter()
     }
 
     func deleteDevice() {

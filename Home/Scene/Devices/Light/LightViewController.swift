@@ -6,8 +6,6 @@ class LightViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-
         setupView()
         bind()
     }
@@ -107,10 +105,12 @@ class LightViewController: UIViewController {
     }()
 
     private lazy var deleteButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: L1s.delete,
-                        style: .plain,
-                        target: self,
-                        action: #selector(didTapDeleteButton))
+        let button = UIBarButtonItem(
+            title: L1s.delete,
+            style: .plain,
+            target: self,
+            action: #selector(didTapDeleteButton)
+        )
         return button
     }()
 
@@ -161,39 +161,43 @@ private extension LightViewController {
     func setupView() {
         let safeArea = view.safeAreaLayoutGuide
         view.backgroundColor = .white
-        //Light save button
+
         view.addSubview(lightSaveButton)
-        lightSaveButton.anchor(bottom: safeArea.bottomAnchor,
-                               paddingBottom: 25,
-                               width: 125,
-                               height: 50)
+        lightSaveButton.anchor(
+            bottom: safeArea.bottomAnchor,
+            paddingBottom: 25,
+            width: 125,
+            height: 50
+        )
         lightSaveButton.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor).isActive = true
 
-        //Light intensity slider
         view.addSubview(lightSlider)
-        lightSlider.anchor(left: safeArea.leftAnchor,
-                                    right: safeArea.rightAnchor,
-                                    paddingLeft: 20, paddingRight: 20)
+        lightSlider.anchor(
+            left: safeArea.leftAnchor,
+            right: safeArea.rightAnchor,
+            paddingLeft: 20,
+            paddingRight: 20
+        )
         lightSlider.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         lightSlider.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
-        //Light intensity label
         view.addSubview(lightLabel)
-        lightLabel.anchor(top: lightSlider.bottomAnchor,
-                                   paddingTop: 20,
-                                   width: 60,
-                                   height: 60)
+        lightLabel.anchor(
+            top: lightSlider.bottomAnchor,
+            paddingTop: 20,
+            width: 60,
+            height: 60
+        )
         lightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 
-        //Mode view
         view.addSubview(switchView)
 
-        switchView.anchor(top: safeArea.topAnchor,
-                         paddingTop: 70,
-                         width: 100,
-                         height: 30)
+        switchView.anchor(
+            top: safeArea.topAnchor,
+            paddingTop: 70,
+            width: 100,
+            height: 30
+        )
         switchView.centerXAnchor.constraint(equalTo: lightSlider.centerXAnchor).isActive = true
     }
-
-    
 }

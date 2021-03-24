@@ -6,13 +6,10 @@ class HomeViewController: UIViewController {
 
     private var segmentedControl: UISegmentedControl?
     private var devicesCollectionView: UICollectionView?
-    lazy var devicesDataSource = DevicesDataSource()
+    private lazy var devicesDataSource = DevicesDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = L1s.homeTitle
-        navigationController?.navigationBar.prefersLargeTitles = true
-        view.backgroundColor = .white
         setupView()
     }
 
@@ -40,6 +37,9 @@ class HomeViewController: UIViewController {
               let producTypeName = sc.titleForSegment(at: sc.selectedSegmentIndex) else { return }
         self.viewModel?.filteredDevices(producTypeName: producTypeName)
     }
+}
+
+private extension HomeViewController {
 
     func bind() {
         guard let viewModel = viewModel else { return }
@@ -55,12 +55,13 @@ class HomeViewController: UIViewController {
         }
         viewModel.getDevice()
     }
-}
-
-private extension HomeViewController {
 
     func setupView() {
+        navigationItem.title = L1s.homeTitle
+        navigationController?.navigationBar.prefersLargeTitles = true
+        view.backgroundColor = .white
         navigationItem.rightBarButtonItem  = profileButton
+
         guard let segmentedControl = setupSegmentedController(),
               let collectionView = setupCollectionView() else { return }
         
@@ -82,9 +83,15 @@ private extension HomeViewController {
     }
 
     func setupSegmentedController() -> UISegmentedControl? {
-        segmentedControl = UISegmentedControl(items: [L1s.all, L1s.heater, L1s.light, L1s.shutter])
+        segmentedControl = UISegmentedControl(
+            items: [L1s.all, L1s.heater, L1s.light, L1s.shutter]
+        )
         segmentedControl?.selectedSegmentIndex = 0
-        segmentedControl?.addTarget(self, action: #selector(handleSegmentChange), for: .valueChanged)
+        segmentedControl?.addTarget(
+            self,
+            action: #selector(handleSegmentChange),
+            for: .valueChanged
+        )
         return segmentedControl
     }
 
@@ -96,7 +103,10 @@ private extension HomeViewController {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 
         devicesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        devicesCollectionView?.register(DeviceCollectionViewCell.self, forCellWithReuseIdentifier: "DeviceCollectionViewCell")
+        devicesCollectionView?.register(
+            DeviceCollectionViewCell.self,
+            forCellWithReuseIdentifier: "DeviceCollectionViewCell"
+        )
         devicesCollectionView?.delegate = devicesDataSource
         devicesCollectionView?.dataSource = devicesDataSource
         devicesCollectionView?.backgroundColor = .white

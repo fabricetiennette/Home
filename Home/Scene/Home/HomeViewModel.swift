@@ -17,9 +17,8 @@ class HomeViewModel {
     private var devices: [Device] = []
     private var user: User?
     private var unFilteredDevices: [Device] = []
-
-    let homeService: HomeService
-    let disposeBag = DisposeBag()
+    private let homeService: HomeService
+    private let disposeBag = DisposeBag()
 
     init(homeService: HomeService = .init()) {
         self.homeService = homeService

@@ -2,6 +2,7 @@ import Foundation
 
 protocol HeaterViewModelDelegate: AnyObject {
     func didTapOnDeleteHeaterView()
+    func didTapOnSaveHeater()
 }
 
 enum HeaterMode: String {
@@ -62,6 +63,7 @@ class HeaterViewModel {
         var deviceList = devices.filter { $0.deviceId != deviceID }
         deviceList.insert(saveDevice, at: index ?? 0)
         UserDefaultConfig.device = deviceList
+        delegate?.didTapOnSaveHeater()
     }
 
     func deleteDevice() {
