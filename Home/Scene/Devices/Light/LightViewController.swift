@@ -115,7 +115,7 @@ class LightViewController: UIViewController {
     }()
 
     @objc private func didTapDeleteButton() {
-        viewModel?.deleteDevice()
+        showAlertAndConfirmDelete { self.viewModel?.deleteDevice() }
     }
     
     @objc func lightSwitchValueDidChange() {

@@ -21,4 +21,6 @@ class L1s {
     static let delete = "delete".localized
     static let update = "update_profile".localized
     static let shutter = "shutter".localized
+    static let deleteMessage = "alert_deletion".localized
+    static let cancel = "cancel".localized
 }

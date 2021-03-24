@@ -55,7 +55,7 @@ class RollerShutterViewController: UIViewController {
     }()
 
     @objc func didTapDeleteButton() {
-        viewModel?.deleteDevice()
+        showAlertAndConfirmDelete { self.viewModel?.deleteDevice() }
     }
 
     @objc func didTapSaveButton() {

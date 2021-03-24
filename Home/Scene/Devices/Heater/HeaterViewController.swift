@@ -141,7 +141,7 @@ class HeaterViewController: UIViewController {
     }()
 
     @objc private func didTapDeleteButton() {
-        viewModel?.deleteDevice()
+        showAlertAndConfirmDelete { self.viewModel?.deleteDevice() }
     }
 
     @objc func heaterSwitchValueDidChange() {

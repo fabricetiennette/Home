@@ -43,6 +43,7 @@
 		2CA5A1D1260B419E00E41A12 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CA5A1D3260B419E00E41A12 /* Localizable.strings */; };
 		2CA5A1DC260B424D00E41A12 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1DB260B424D00E41A12 /* String+.swift */; };
 		2CA5A1E1260B431B00E41A12 /* L1s.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1E0260B431B00E41A12 /* L1s.swift */; };
+		2CA5A1E6260B57BF00E41A12 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA5A1E5260B57BF00E41A12 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		2CA5A1D7260B41A200E41A12 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2CA5A1DB260B424D00E41A12 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2CA5A1E0260B431B00E41A12 /* L1s.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L1s.swift; sourceTree = "<group>"; };
+		2CA5A1E5260B57BF00E41A12 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 				2CA5A19626095E9100E41A12 /* UserDefault+.swift */,
 				2CA5A1A32609646800E41A12 /* Double+.swift */,
 				2CA5A1DB260B424D00E41A12 /* String+.swift */,
+				2CA5A1E5260B57BF00E41A12 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				2CA5A19F26095EC500E41A12 /* UserDefaultConfig.swift in Sources */,
 				2CA5A13A260805C400E41A12 /* DevicesDataSource.swift in Sources */,
+				2CA5A1E6260B57BF00E41A12 /* UIViewController+.swift in Sources */,
 				2CA5A1BB2609E63C00E41A12 /* UpdateProfileTableViewCell.swift in Sources */,
 				2CA59B3C2607CA9B00E41A12 /* Coordinator.swift in Sources */,
 				2CA5A12D2607F54500E41A12 /* HomeViewModel.swift in Sources */,
