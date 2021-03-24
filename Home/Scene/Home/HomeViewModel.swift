@@ -14,6 +14,7 @@ class HomeViewModel {
     weak var delegate: HomeViewModelDelegate?
 
     var devicesHandler: ((_ devices: [Device]) -> Void)?
+    var errorHandler: (() -> Void)?
     private var devices: [Device] = []
     private var user: User?
     private var unFilteredDevices: [Device] = []
@@ -30,7 +31,7 @@ class HomeViewModel {
                 .subscribe(onNext: { [weak self] result in
                     self?.setDeviceAndUser(with: result)
                 }, onError: { error in
-                    print(error.localizedDescription)
+                    self.errorHandler?()
                 }).disposed(by: disposeBag)
         } catch {}
     }

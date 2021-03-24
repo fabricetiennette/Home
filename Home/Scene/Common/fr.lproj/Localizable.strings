@@ -7,22 +7,11 @@
 */
 
 "home_title" = "Mes Objets";
-"filter_title" = "Filtrer";
-"alert_networkError" = "Veuillez réesayer ultérieurement...";
-"alert_no_devices" = "Pas d'objet trouvés. Veuillez réinitialiser votre comptre dans votre profil.";
-"alert_max_temperature" = "Vous avez atteint la température maximale";
-"alert_min_temperature" = "Vous avez atteint la température minimale";
 "alert_deletion" = "Voulez-vous vraiment supprimer cet objet ?";
-"alert_no_user" = "Problème de chargement des données. Veuillez réessayer ultérieurement.";
-"filters_alert" = "Aucun objet ne correspond à votre recherche";
-"filter_search_title" = "Chercher";
+"alert_error" = "Problème de chargement des données. Veuillez réessayer ultérieurement.";
 "heater_object" = "Radiateur";
 "roller_shutter_object" = "Volet";
 "light_object" = "Lumière";
-"position_filter" = "Position :";
-"intensity_filter" = "Intensité :";
-"temperature_filter" = "Température :";
-"mode_filter" = "Mode :";
 "on_status" = "Activé";
 "off_status" = "Désactivé";
 "save_button" = "Enregistrer";
@@ -39,3 +28,4 @@
 "delete" = "Supprimer";
 "shutter" = "Volet";
 "cancel" = "Annuler";
+"error" = "Erreur";

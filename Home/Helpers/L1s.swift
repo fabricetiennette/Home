@@ -23,4 +23,6 @@ class L1s {
     static let shutter = "shutter".localized
     static let deleteMessage = "alert_deletion".localized
     static let cancel = "cancel".localized
+    static let alertError = "alert_Error".localized
+    static let errorTitle = "error".localized
 }

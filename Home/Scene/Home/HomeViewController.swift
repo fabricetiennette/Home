@@ -50,6 +50,9 @@ private extension HomeViewController {
                 self?.devicesCollectionView?.reloadData()
             }
         }
+        viewModel.errorHandler = {
+            self.showAlert(title: L1s.errorTitle, message: L1s.alertError)
+        }
         devicesDataSource.didSelectHandler =  { selectedDevice in
             viewModel.getSelectedDevice(selectedDevice: selectedDevice)
         }
